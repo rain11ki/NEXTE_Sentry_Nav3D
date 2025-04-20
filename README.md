@@ -31,5 +31,9 @@ roslaunch rover_launch move_base_3d.launch
 运行roslaunch fast_lio_localization localization_avia.launch后，在rviz中给予初始位姿，成功后在运行下一句命令
 
 运行roslaunch rover_launch move_base_3d.launch后，在该rviz中，左侧勾选Allmap，即可看到当前地图，选用上方3D goal给予目标点，右侧会出先目标点消息，点击开始导航即可。
+## 致谢
+- [NEXTE_Sentry_Nav](https://github.com/66Lau/NEXTE_Sentry_Nav)
+- [MoveBase3D](https://github.com/WilsonGuo/MoveBase3D)
+
 ## F&Q
 1.关于实时避障：由于MoveBase3D中关于避障的部分计算量大，会导致规划也出现问题，所以我注释了该部分的功能，具体内容可以在src/MoveBase3D/global_planner_3d/src/global_planning_obs.cpp中找到，我注释的部分在214行，pt_sub = nh.subscribe("/cloud_registered_body", 1, rcvLidarCallBack)。有兴趣的可以去debug一下。
